@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechFix Solutions | Services</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-flex">
+      <div class="nav-left">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="models.html">Solutions</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="nav-right">
+        <img src="logo.jpg" alt="TechFix Solutions Logo" class="logo" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <h2 class="section-title">TechFix Services</h2>
+
+    <div class="services-grid">
+
+      <div class="service-card" onclick="showServiceDetail('Maintenance')">
+        <img src="images (1).jpeg" alt="System Maintenance">
+        <h3>System Maintenance</h3>
+        <p>Regular computer maintenance to ensure speed, stability, and reliability.</p>
+      </div>
+
+      <div class="service-card" onclick="showServiceDetail('Repairs')">
+        <img src="images (3).jpeg" alt="Computer Repairs">
+        <h3>Computer Repairs</h3>
+        <p>Hardware and software repairs for desktops and laptops.</p>
+      </div>
+
+      <div class="service-card" onclick="showServiceDetail('Diagnostics')">
+        <img src="images (2).jpeg" alt="Diagnostics">
+        <h3>Diagnostics</h3>
+        <p>Accurate fault detection using modern diagnostic tools.</p>
+      </div>
+
+      <div class="service-card" onclick="showServiceDetail('Networking')">
+        <img src="download (1).jpeg" alt="Network Services">
+        <h3>Network Setup</h3>
+        <p>Installation and configuration of secure wired and wireless networks.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Service Modal -->
+  <div id="serviceModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle">Service Title</h3>
+      <p id="modalDescription">
+        More information about the selected service will appear here.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TechFix Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script (LOGIC UNCHANGED) -->
+  <script>
+    function showServiceDetail(serviceName) {
+      const modal = document.getElementById("serviceModal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+
+      const serviceDetails = {
+        "Maintenance": "We provide routine system maintenance including updates, cleaning, optimization, and performance checks to keep your computer running smoothly.",
+        "Repairs": "From hardware replacements to software fixes, our technicians repair desktops and laptops efficiently and professionally.",
+        "Diagnostics": "Using advanced diagnostic tools, we quickly identify hardware faults, software issues, and system errors.",
+        "Networking": "We design, install, and troubleshoot secure wired and wireless networks for homes and businesses."
+      };
+
+      modalTitle.textContent = serviceName;
+      modalDescription.textContent = serviceDetails[serviceName];
+      modal.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("serviceModal");
+      modal.classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
+``
